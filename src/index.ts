@@ -1,4 +1,4 @@
-import { IdleQueue, IdleQueueOptions } from "idlefy";
+import { IdleQueue } from "idlefy";
 
 /**
  * Delays a task execution using setTimeout and requestAnimationFrame
@@ -18,12 +18,16 @@ export function delayTask(): Promise<void> {
  * @param options - Configuration options for the IdleQueue
  * @returns Promise that resolves when the task should be executed
  */
-export function delayTaskUntilUrgent(
-  options?: IdleQueueOptions,
-): Promise<void> {
+export function delayTaskUntilUrgent(options?: {
+  ensureTasksRun?: boolean;
+  timeout?: number;
+}): Promise<void> {
   const queue = new IdleQueue({ ensureTasksRun: true, ...options });
 
   return new Promise<void>((resolve) => {
-    queue.pushTask(resolve, options);
+    const task = () => {
+      resolve();
+    };
+    queue.pushTask(task);
   });
 }
