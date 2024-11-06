@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
+import { resolve } from "path";
 
 export default defineConfig({
   plugins: [react(), dts()],
@@ -9,6 +10,11 @@ export default defineConfig({
     outDir: "../dist",
     sourcemap: true,
     emptyOutDir: true,
+  },
+  server: {
+    port: 3000,
+    open: true,
+    host: true,
   },
   resolve: {
     alias: {

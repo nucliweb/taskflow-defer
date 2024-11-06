@@ -17,9 +17,9 @@
     "outDir": "dist",
     "skipLibCheck": true,
     "allowImportingTsExtensions": false,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "types": ["./src/types.d.ts"]
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "demo"]
+  "include": ["src/**/*", "demo/src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
