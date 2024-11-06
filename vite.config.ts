@@ -1,28 +1,21 @@
 import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 import { resolve } from "path";
 
 export default defineConfig({
+  plugins: [react(), dts()],
   build: {
-    lib: {
-      entry: resolve(__dirname, "src/index.ts"),
-      name: "performance",
-      fileName: "index",
-      formats: ["es", "cjs"],
-    },
-    rollupOptions: {
-      external: ["idlefy"],
-      output: {
-        globals: {
-          idlefy: "idlefy",
-        },
-      },
+    outDir: "demo/dist",
+    sourcemap: true,
+  },
+  resolve: {
+    alias: {
+      "taskflow-defer": resolve(__dirname, "src"),
     },
   },
-  plugins: [dts()],
   test: {
     environment: "happy-dom",
-    // Alternatively: environment: 'jsdom',
     setupFiles: ["./test/setup.ts"],
     coverage: {
       provider: "v8",

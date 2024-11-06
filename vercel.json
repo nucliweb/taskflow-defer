@@ -1,5 +1,4 @@
 {
-  "buildCommand": "pnpm --filter demo build",
-  "installCommand": "pnpm install",
+  "buildCommand": "vite build demo",
   "outputDirectory": "demo/dist"
 }

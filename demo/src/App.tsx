@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Chrome } from "lucide-react";
-import { delayTask, delayTaskUntilUrgent } from "taskflow-defer";
+import { delayTask, delayTaskUntilUrgent } from "../../src";
 import { compute } from "./utils";
 import type { OptimizationType } from "./types";
 
