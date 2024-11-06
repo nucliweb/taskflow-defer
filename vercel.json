@@ -1,4 +1,4 @@
 {
-  "buildCommand": "cd demo && pnpm install && pnpm build",
+  "buildCommand": "cd demo && pnpm install && pnpm vercel-build",
   "outputDirectory": "demo/dist"
 }
