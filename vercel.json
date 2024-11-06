@@ -1,4 +1,5 @@
 {
-  "buildCommand": "cd demo && pnpm install && pnpm build",
-  "outputDirectory": "dist"
+  "buildCommand": "pnpm --filter demo build",
+  "installCommand": "pnpm install",
+  "outputDirectory": "demo/dist"
 }
