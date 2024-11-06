@@ -1,6 +1,6 @@
 # Taskflow Defer
 
-A lightweight library for managing task execution timing in the browser.
+A lightweight library for managing task execution timing in the browser
 
 ## Demo
 
